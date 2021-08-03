@@ -4,7 +4,7 @@ const throwIfMissing = () => { throw new Error('Missing parameter'); };
 
 class AudioUtils {
   static create(file = throwIfMissing, commentator = UserPrefs.defaults.commentator, volume = UserPrefs.defaults.volume) {
-    const path = browser.extension.getURL('ogg/' + commentator + '/' + file);
+    const path = runtime.getURL('ogg/' + commentator + '/' + file);
     const audio = new Audio(path);
     audio.volume = volume;
 
